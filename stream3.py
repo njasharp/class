@@ -20,7 +20,7 @@ if submit_button:
     st.success('Welcome' + ' ' + first_name + " " + last_name)
 
 
-df = pd.read_csv(r".\data1.csv")
+df = pd.read_csv(r"data1.csv")
 st.write(df)
 dc = {"a" : 10, "b" : 20, "c" : 30}
 st.write(dc)
