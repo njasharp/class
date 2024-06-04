@@ -1,7 +1,7 @@
 import streamlit as st
 st.set_page_config (layout="wide")
 
-st.header("Past Incidents")
+st.header("Past Incidents", divider='green')
 st.subheader("Jun 4, 2024")
 st.write(":red[ChatGPT is unavailbe for some users]")
 st.write("**Resolved:** this has been resolved")
