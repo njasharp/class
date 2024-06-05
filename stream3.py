@@ -4,7 +4,7 @@ import pandas as pd
 st.set_page_config (layout="wide")
 
 #header - header of the app 
-st.header("Using streamlit input widgets ")
+st.header("Using form input widgets ")
 
 
 reg_form = st.form("user_registration_form")
