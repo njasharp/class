@@ -17,7 +17,7 @@ status = reg_form.checkbox("Active Member?")
 submit_button = reg_form.form_submit_button('Submit')
 
 if submit_button:
-    st.success('Welcome' + ' ' + first_name + " " + last_name)
+    st.success('Welcome' + ' ' + first_name + " " + last_name + ". you are a  valued " + level + " member.")
 
 
 df = pd.read_csv(r"data1.csv")
