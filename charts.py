@@ -52,3 +52,6 @@ if st.sidebar.checkbox('Show Circular Area Chart'):
 if st.sidebar.checkbox('Show Stacked Column Chart'):
     fig_stacked = px.bar(filtered_data, x='Game', y=selected_metric, color='Region', title=f'{selected_platform} Games in {selected_region} - {selected_metric} Stacked Column Chart')
     st.plotly_chart(fig_stacked)
+
+st.markdown(' < select data on sidebar menu')
+st.info("built by DW 6-8-24 - v1")
