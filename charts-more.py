@@ -10,6 +10,20 @@ data = pd.read_csv(data_url)
 st.title("More charts Games Market Analysis")
 st.divider()
 
+# Enable dark mode
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #212121;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 # Sidebar filters
 st.sidebar.header('Filter Data')
 selected_region = st.sidebar.selectbox('Select Region', data['Region'].unique())
