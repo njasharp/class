@@ -27,20 +27,13 @@ if st.sidebar.checkbox('Show Stacked 100% Column Chart'):
     fig_stacked_100_col.update_layout(barmode='relative')
     st.plotly_chart(fig_stacked_100_col)
 
-# Stacked Column Chart: Few Periods, Relative and Absolute Differences Matter
-if st.sidebar.checkbox('Show Stacked Column Chart'):
-    fig_stacked_col = px.bar(filtered_data, x='Game', y=selected_metric, color='Region', title=f'{selected_platform} Games in {selected_region} - Stacked Column Chart')
-    st.plotly_chart(fig_stacked_col)
 
 # Stacked 100% Area Chart: Many Periods, Only Relative Differences Matter
 if st.sidebar.checkbox('Show Stacked 100% Area Chart'):
     fig_stacked_100_area = px.area(filtered_data, x='Game', y=selected_metric, color='Region', title=f'{selected_platform} Games in {selected_region} - Stacked 100% Area Chart')
     st.plotly_chart(fig_stacked_100_area)
 
-# Stacked Area Chart: Many Periods, Relative and Absolute Differences Matter
-if st.sidebar.checkbox('Show Stacked Area Chart'):
-    fig_stacked_area = px.area(filtered_data, x='Game', y=selected_metric, color='Region', title=f'{selected_platform} Games in {selected_region} - Stacked Area Chart')
-    st.plotly_chart(fig_stacked_area)
+
 
 # Pie Chart: Static, Simple Share of Total
 if st.sidebar.checkbox('Show Pie Chart'):
@@ -86,8 +79,15 @@ if st.sidebar.checkbox('Show Bubble Chart'):
     fig_bubble = px.scatter(filtered_data, x='Game', y=selected_metric, size='Revenue', color='Game', title=f'{selected_platform} Games in {selected_region} - Bubble Chart')
     st.plotly_chart(fig_bubble)
 
+# Stacked Column Chart: Few Periods, Relative and Absolute Differences Matter
+if st.sidebar.checkbox('Show Stacked Column Chart'):
+    fig_stacked_col = px.bar(filtered_data, x='Game', y=selected_metric, color='Region', title=f'{selected_platform} Games in {selected_region} - Stacked Column Chart')
+    st.plotly_chart(fig_stacked_col)
 
-
+# Stacked Area Chart: Many Periods, Relative and Absolute Differences Matter
+if st.sidebar.checkbox('Show Stacked Area Chart'):
+    fig_stacked_area = px.area(filtered_data, x='Game', y=selected_metric, color='Region', title=f'{selected_platform} Games in {selected_region} - Stacked Area Chart')
+    st.plotly_chart(fig_stacked_area)
 
 st.markdown(' < select data on sidebar menu')
 st.info("built by DW 6-8-24 - v1")
