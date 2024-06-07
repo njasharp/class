@@ -19,26 +19,7 @@ selected_metric = st.sidebar.selectbox('Select Metric', ['Downloads', 'Revenue',
 # Filter data based on selections
 filtered_data = data[(data['Region'] == selected_region) & (data['Platform'] == selected_platform)]
 
-# Column Histogram: Single Variable, Few Items
-if st.sidebar.checkbox('Show Column Histogram'):
-    fig_hist = px.histogram(filtered_data, x=selected_metric, title=f'{selected_platform} Games in {selected_region} - {selected_metric} Histogram')
-    st.plotly_chart(fig_hist)
 
-# Line Histogram: Single Variable, Many Items
-if st.sidebar.checkbox('Show Line Histogram'):
-    fig_line_hist = px.histogram(filtered_data, x=selected_metric, histnorm='percent', title=f'{selected_platform} Games in {selected_region} - {selected_metric} Line Histogram')
-    fig_line_hist.update_traces(cumulative_enabled=True)
-    st.plotly_chart(fig_line_hist)
-
-# Scatter Chart: Two Variables
-if st.sidebar.checkbox('Show Scatter Chart'):
-    fig_scatter = px.scatter(filtered_data, x='Game', y=selected_metric, size=selected_metric, color='Game', title=f'{selected_platform} Games in {selected_region} - {selected_metric} Scatter Plot')
-    st.plotly_chart(fig_scatter)
-
-# Bubble Chart: Three Variables
-if st.sidebar.checkbox('Show Bubble Chart'):
-    fig_bubble = px.scatter(filtered_data, x='Game', y=selected_metric, size='Revenue', color='Game', title=f'{selected_platform} Games in {selected_region} - Bubble Chart')
-    st.plotly_chart(fig_bubble)
 
 # Stacked 100% Column Chart: Few Periods, Only Relative Differences Matter
 if st.sidebar.checkbox('Show Stacked 100% Column Chart'):
@@ -83,6 +64,30 @@ if st.sidebar.checkbox('Show Stacked 100% Column Chart with Subcomponents'):
     fig_stacked_100_col_sub = px.bar(filtered_data, x='Game', y=selected_metric, color='Region', text_auto='.2s', title=f'{selected_platform} Games in {selected_region} - Stacked 100% Column Chart with Subcomponents')
     fig_stacked_100_col_sub.update_layout(barmode='stack', barnorm='percent')
     st.plotly_chart(fig_stacked_100_col_sub)
+
+# Column Histogram: Single Variable, Few Items
+if st.sidebar.checkbox('Show Column Histogram'):
+    fig_hist = px.histogram(filtered_data, x=selected_metric, title=f'{selected_platform} Games in {selected_region} - {selected_metric} Histogram')
+    st.plotly_chart(fig_hist)
+
+# Line Histogram: Single Variable, Many Items
+if st.sidebar.checkbox('Show Line Histogram'):
+    fig_line_hist = px.histogram(filtered_data, x=selected_metric, histnorm='percent', title=f'{selected_platform} Games in {selected_region} - {selected_metric} Line Histogram')
+    fig_line_hist.update_traces(cumulative_enabled=True)
+    st.plotly_chart(fig_line_hist)
+
+# Scatter Chart: Two Variables
+if st.sidebar.checkbox('Show Scatter Chart'):
+    fig_scatter = px.scatter(filtered_data, x='Game', y=selected_metric, size=selected_metric, color='Game', title=f'{selected_platform} Games in {selected_region} - {selected_metric} Scatter Plot')
+    st.plotly_chart(fig_scatter)
+
+# Bubble Chart: Three Variables
+if st.sidebar.checkbox('Show Bubble Chart'):
+    fig_bubble = px.scatter(filtered_data, x='Game', y=selected_metric, size='Revenue', color='Game', title=f'{selected_platform} Games in {selected_region} - Bubble Chart')
+    st.plotly_chart(fig_bubble)
+
+
+
 
 st.markdown(' < select data on sidebar menu')
 st.info("built by DW 6-8-24 - v1")
