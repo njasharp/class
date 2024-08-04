@@ -29,7 +29,7 @@ with st.sidebar:
     if st.button("Reset"):
         st.session_state["messages"] = []
         st.session_state["new_message"] = False
-        st.experimental_rerun()
+        st.rerun()
 
 def model_res_generator():
     messages = st.session_state["messages"]
