@@ -59,7 +59,7 @@ st.write("")
 if st.session_state["new_message"]:
     st.session_state["user_query"] = ""
     st.session_state["new_message"] = False
-    st.experimental_rerun()
+    st.rerun()
 
 if prompt := st.text_input("What is your query?", key="user_query"):
     # Add latest message to history in format {role, content}
@@ -75,6 +75,6 @@ if prompt := st.text_input("What is your query?", key="user_query"):
 
     # Set flag for new message
     st.session_state["new_message"] = True
-    st.experimental_rerun()
+    st.rerun()
 
 st.sidebar.info("built by dw")
