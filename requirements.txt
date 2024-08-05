@@ -2,3 +2,6 @@ streamlit
 ollama
 plotly
 pandas
+httpx
+PyPDF2
+Pillow
