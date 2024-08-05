@@ -7,7 +7,8 @@ from PyPDF2 import PdfReader
 from PIL import Image
 
 st.set_page_config(layout="wide")
-st.title("LLM Chatbot")
+st.title("InsightBot LLM Chatbot")
+st.text("Analyzing data for making business-critical decisions and effectively handling complex analysis")
 
 # Initialize history
 if "messages" not in st.session_state:
@@ -27,7 +28,7 @@ if "uploaded_file_content" not in st.session_state:
 if "uploaded_files" not in st.session_state:
     st.session_state["uploaded_files"] = []
 
-st.sidebar.write("local vision, rag")
+st.sidebar.write("Query Assist AI")
 # Sidebar menu
 with st.sidebar:
     try:
