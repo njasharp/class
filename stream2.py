@@ -3,7 +3,8 @@ import streamlit as st
 import httpx
 
 st.set_page_config(layout="wide")
-st.title("LLM Chatbot")
+st.title("InsightBot LLM Chatbot")
+st.text("Analyzing data for making business-critical decisions and effectively handling complex analysis")
 
 # Initialize history
 if "messages" not in st.session_state:
@@ -17,6 +18,7 @@ if "system_prompt" not in st.session_state:
 if "new_message" not in st.session_state:
     st.session_state["new_message"] = False
 
+st.sidebar.write("Query Assist AI")
 # Sidebar menu
 with st.sidebar:
     try:
