@@ -23,7 +23,7 @@ with st.sidebar:
         models = [model["name"] for model in ollama.list()["models"]]
         st.session_state["model"] = st.selectbox("Choose your model", models)
     except httpx.ConnectError:
-        st.error("Unable to connect to the local Ollama instance. Please ensure it is running.")
+        st.error("Unable to connect.")
     st.session_state["system_prompt"] = st.text_area("System Prompt")
     
     if st.button("Reset"):
