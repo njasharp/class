@@ -7,7 +7,7 @@ from PyPDF2 import PdfReader
 from PIL import Image
 
 st.set_page_config(layout="wide")
-st.title("InsightBot LLM Chatbot")
+st.title("InsightBot LLM Chatbot Plus Rag")
 st.text("Analyzing data for making business-critical decisions and effectively handling complex analysis")
 
 # Initialize history
